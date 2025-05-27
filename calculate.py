@@ -1,24 +1,26 @@
 import sys
+import json
+
 
 def calculate(x, y, z):
-        values = []
+        values = {'x': x, 'y': y, 'z': z}
         x += y
-        values.append(x)
+        values['x1'] = x
         x -= z
-        values.append(x)
+        values['x2'] = x
         x *= y
-        values.append(x)
+        values['x3'] = x
         x %= z
-        values.append(x)
+        values['x4'] = x
         x /= z
-        values.append(x)
+        values['x5'] = x
         sum = x + y + z
-        values.append(sum)
+        values['sum'] = sum
         return values
 
 if len(sys.argv) > 3:
-    if int(sys.argv[3]) != 0:
-        print(calculate(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])))
+    if int(sys.argv[3]) > 0:
+        print(json.dumps(calculate(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]))))
     else print("z can't be 0") 
 else:
     print("Error: Missing a number")
