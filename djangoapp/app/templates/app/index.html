@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thiago Teixeira">
+    <title>Calculus - Assignment 03 - IST105</title>
+</head>
+<body>
+    <h2>Calculus - Assignment 03 - IST105</h2>
+    <p>Author: Thiago Teixeira</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Calculus Operations</legend>
+            <p>Enter three integers bigger or equal to 1</p>
+            {{ form.as_p }}
+            <button type="submit">Calculate</button>
+        </fieldset>
+    {% if result %}
+        <h2>Results:</h2>
+        <p>Original values:</p>
+        <p>x: {{ result.0 }}</p>
+        <p>y: {{ result.1 }}</p>
+        <p>z: {{ result.2 }}</p>
+        <p>Calculation steps:</p>
+        <p>After x += y: {{ result.3 }}</p>
+        <p>After x -= z: {{ result.4 }}</p>
+        <p>After x *= y: {{ result.5 }}</p>
+        <p>After x %= z: {{ result.6 }}</p>
+        <p>After x /= y: {{ result.7 }}</p>
+        <p>Final Result: x + y + z is: {{ result.8 }}</p>
+    {% endif %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
