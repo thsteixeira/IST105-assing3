@@ -20,15 +20,19 @@
     {% if result %}
         <h2>Results:</h2>
         <p>Original values:</p>
-        <p>x: {{ result.0 }}</p>
-        <p>y: {{ result.1 }}</p>
-        <p>z: {{ result.2 }}</p>
+        <ul>
+            <li>x: {{ result.0 }}</li>
+            <li>y: {{ result.1 }}</li>
+            <li>z: {{ result.2 }}</li>
+        </ul>
         <p>Calculation steps:</p>
-        <p>After x += y: {{ result.3 }}</p>
-        <p>After x -= z: {{ result.4 }}</p>
-        <p>After x *= y: {{ result.5 }}</p>
-        <p>After x %= z: {{ result.6 }}</p>
-        <p>After x /= y: {{ result.7 }}</p>
+        <ol>
+            <li>After x += y: {{ result.3 }}</li>
+            <li>After x -= z: {{ result.4 }}</li>
+            <li>After x *= y: {{ result.5 }}</li>
+            <li>After x %= z: {{ result.6 }}</li>
+            <li>After x /= y: {{ result.7 }}</li>
+        </ol>
         <p>Final Result: x + y + z is: {{ result.8 }}</p>
     {% endif %}
     {% if error %}
